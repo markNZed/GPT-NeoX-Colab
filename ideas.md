@@ -1,0 +1,4 @@
+- Can we support distributed consumer grade GPUs ?
+  - https://github.com/EleutherAI/gpt-neox?tab=readme-ov-file#advanced-custom-launching
+- Custom data loading
+  - shttps://github.com/EleutherAI/gpt-neox?tab=readme-ov-file#using-custom-data
