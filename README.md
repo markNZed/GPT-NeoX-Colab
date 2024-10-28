@@ -76,34 +76,20 @@ lr: 5e-4
 
 ### Setup and Execution
 
-1. **Clone the Repository**  
-   Open a Colab notebook, then run:
-   ```bash
-   !git clone https://github.com/YourUsername/GPT-NeoX-Colab.git
-   %cd GPT-NeoX-Colab
-   ```
+1. **Run the Notebook**  
 
-2. **Install Dependencies**  
-   ```bash
-   !pip install -r requirements.txt
-   ```
-
-3. **Verify GPU Availability**  
-   ```python
-   import torch
-   print(torch.cuda.get_device_name(0))
-   ```
-
-4. **Run the Notebook**  
-   Open the desired notebook ([Shakespeare](link_to_shakespeare_notebook) or [Code Completion](link_to_code_completion_notebook)) in Google Colab and follow the setup and training instructions.
+   From this GitHub repository open the Colab notebook in Colab using the Colab link at the top of the notebook.
+   - [Shakespeare](link_to_shakespeare_notebook) 
+   - [Code Completion](link_to_code_completion_notebook)s
+   - Follow the setup and training instructions in the notebook
 
 ## Repository Structure
 
 ```
 GPT-NeoX-Colab/
 ├── notebooks/
-│   ├── shakespeare_training_notebook.ipynb
-│   └── code_completion_notebook.ipynb
+│   ├── shakespeare_training.ipynb
+│   └── code_completion.ipynb
 ├── configs/
 │   ├── shakespeare_config.yml
 │   └── code_completion.yml
