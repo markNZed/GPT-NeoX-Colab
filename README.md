@@ -89,9 +89,9 @@ lr: 5e-4
 GPT-NeoX-Colab/
 ├── notebooks/
 │   ├── shakespeare_training.ipynb
-│   └── code_completion.ipynb
+│   └── code_completion_training.ipynb
 ├── configs/
-│   ├── shakespeare_config.yml
+│   ├── shakespeare.yml
 │   └── code_completion.yml
 ├── data/
 │   └── (Data instructions and files)
