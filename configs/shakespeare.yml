@@ -70,17 +70,17 @@
     "min_loss_scale": 1
   },
 
-  "train_iters": 43000,
-  "lr_decay_iters": 43000,
+  "train_iters": 7000,
+  "lr_decay_iters": 7000,
   "distributed_backend": "nccl",
   "lr_decay_style": "cosine",
   "warmup": 0.01,
   "checkpoint_factor": 1000,
-  "eval_interval": 100000,
+  "eval_interval": 5000,
   "eval_iters": 10,
 
-  "log_interval": 10,
-  "steps_per_print": 10,
+  "log_interval": 100,
+  "steps_per_print": 100,
   "wall_clock_breakdown": true,
 
   # additional deepspeed args not specified above
