@@ -6,3 +6,4 @@
   - The Py150 dataset contains 150,000 Python files.
 - While so far there has been no systematic work that focuses on prompted pretraining, recent work (Biderman and Raff, 2022) observed that the formulation of the StackExchange component of the Pile appears to heavily influences code generation
 - char_level_ppl for char tokenizer?
+- 1.2GB so could increase batch by at least 10x
