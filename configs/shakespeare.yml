@@ -70,8 +70,8 @@
     "min_loss_scale": 1
   },
 
-  "train_iters": 200,
-  "lr_decay_iters": 200,
+  "train_iters": 300,
+  "lr_decay_iters": 300,
   "distributed_backend": "nccl",
   "lr_decay_style": "linear",
   "warmup": 0.01,
