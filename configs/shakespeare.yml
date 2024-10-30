@@ -73,7 +73,7 @@
   "train_iters": 20000,
   "lr_decay_iters": 10000,
   "distributed_backend": "nccl",
-  "lr_decay_style": "cosine",
+  "lr_decay_style": "linear",
   "warmup": 0.01,
   "checkpoint_factor": 5000,
   "eval_interval": 5000,
