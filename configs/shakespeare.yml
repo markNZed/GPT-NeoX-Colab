@@ -1,6 +1,6 @@
 {
-  "pipe_parallel_size": 1,
-  "model_parallel_size": 1,
+  "pipe_parallel_size": 0, # Because running on one GPU
+  "model_parallel_size": 0, # Because running on one GPU
 
   # model settings
   "num_layers": 4,
