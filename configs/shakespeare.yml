@@ -70,12 +70,12 @@
     "min_loss_scale": 1
   },
 
-  "train_iters": 7000,
-  "lr_decay_iters": 7000,
+  "train_iters": 20000,
+  "lr_decay_iters": 10000,
   "distributed_backend": "nccl",
   "lr_decay_style": "cosine",
   "warmup": 0.01,
-  "checkpoint_factor": 1000,
+  "checkpoint_factor": 5000,
   "eval_interval": 5000,
   "eval_iters": 10,
 
