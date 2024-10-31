@@ -7,3 +7,4 @@
 - While so far there has been no systematic work that focuses on prompted pretraining, recent work (Biderman and Raff, 2022) observed that the formulation of the StackExchange component of the Pile appears to heavily influences code generation
 - char_level_ppl for char tokenizer?
 - 1.2GB so could increase batch by at least 10x
+- The deepy.py script assumes it is running in the root of GTP-NeoX repo
