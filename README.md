@@ -1,9 +1,10 @@
-# DRAFT/EXPERIMENTAL - DO NOT USE
-
 # GPT-NeoX-Colab
 
 > **An accessible set of Google Colab notebooks for training and experimenting with GPT-NeoX models on limited resources.**
 
+## Status
+
+The Shakespeare Text Generation Notebook is available. The Python Code Completion Notebook is under development.
 
 ## Overview
 
@@ -24,63 +25,41 @@ This repository provides a collection of example Google Colab notebooks that gui
 **Objective:** Train a small GPT-NeoX model on the Shakespeare dataset to explore basic text generation.
 
 **Highlights:**
+
 - Setup and configuration guidance for small, Colab-friendly models.
 - Step-by-step instructions on data loading, tokenization, and model training.
 - Integrated experiment tracking with W&B to log metrics and visualize model performance.
 
-**Example Configuration:**
-```yaml
-model:
-  hidden-size: 256
-  num-layers: 4
-  num-attention-heads: 4
-  max-position-embeddings: 256
-training:
-  micro-batch-size: 2
-  global-batch-size: 8
-  train-iters: 5000
-  lr: 5e-4
-```
-
-[**Open in Colab ➔**](link_to_shakespeare_notebook)
+[**Open in Colab ➔**](notebooks/shakespeare_training.ipynb)
 
 ### 2. Python Code Completion
 
 **Objective:** Train a GPT-NeoX model from scratch for Python code completion tasks.
 
 **Highlights:**
+
 - Includes dataset recommendations and preprocessing steps specific to Python code.
-- Detailed sections on customizing training algorithms and hyperparameters.
+- Detailed sections on customizing training algorithms and hyper-parameters.
 - Integrated W&B tracking to facilitate comparison of different model configurations.
 
-**Example Configuration:**
-```yaml
-hidden-size: 512
-num-layers: 6
-num-attention-heads: 8
-max-position-embeddings: 1024
-micro-batch-size: 1
-global-batch-size: 8
-train-iters: 10000
-lr: 5e-4
-```
-
-[**Open in Colab ➔**](link_to_code_completion_notebook)
+[**Open in Colab ➔**](notebooks/code_completion_training.ipynb)
 
 ## Quick Start
 
 ### Prerequisites
+
 - **Google Colab** – A free Google account with access to Colab GPUs.
 - **GitHub Account** – For code sharing and collaboration.
 - **Weights & Biases (W&B) Account** – For experiment tracking.
 
 ### Setup and Execution
 
-1. **Run the Notebook**  
+1. **Run the Notebook**
 
    From this GitHub repository open the Colab notebook in Colab using the Colab link at the top of the notebook.
-   - [Shakespeare](link_to_shakespeare_notebook) 
-   - [Code Completion](link_to_code_completion_notebook)s
+
+   - [Shakespeare](notebooks/shakespeare_training.ipynb)
+   - [Code Completion](notebooks/code_completion_training.ipynb)
    - Follow the setup and training instructions in the notebook
 
 ## Repository Structure
@@ -107,11 +86,13 @@ GPT-NeoX-Colab/
 ## Key Components
 
 ### 1. GitHub for Collaboration
+
 - **Version Control:** Use GitHub for all code updates, bug tracking, and feature requests.
 - **Clear Commit Messages:** Make changes with clear, descriptive messages to facilitate collaboration.
 - **Repository Organization:** The repository is structured to keep configurations, scripts, and data handling in separate folders for clarity.
 
 ### 2. Weights & Biases (W&B) for Experiment Tracking
+
 - **Project Creation:** Log into W&B and create a project to track experiments.
 - **Automated Logging:** The notebooks are configured to log hyperparameters, metrics, and artifacts in real-time.
 - **Comparisons:** Easily compare different model runs, configurations, and metrics.
@@ -120,7 +101,7 @@ GPT-NeoX-Colab/
 
 - **GPT-NeoX Documentation:** [EleutherAI GPT-NeoX](https://github.com/EleutherAI/gpt-neox)
 - **SourceGraph for Code Navigation:** [SourceGraph GPT-NeoX](https://sourcegraph.com/github.com/EleutherAI/gpt-neox) – For navigating the GPT-NeoX codebase.
-- **Benchmarking Datasets:**  
+- **Benchmarking Datasets:**
   - [CodeXGLUE Token-Level Code Completion](https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/CodeCompletion-token)
   - [CodeXGLUE Line-Level Code Completion](https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/CodeCompletion-line)
 
@@ -140,8 +121,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgments
 
 - Special thanks to [EleutherAI](https://www.eleuther.ai/) for developing GPT-NeoX and providing the open-source community with invaluable tools and resources.
-- Thanks to [Weights & Biases](https://wandb.ai/) for providing excellent tools for experiment tracking.
+- Thanks to [Weights &amp; Biases](https://wandb.ai/) for providing excellent tools for experiment tracking.
 
---- 
+---
 
 For further assistance in exploring the GPT-NeoX codebase, visit [SourceGraph GPT-NeoX](https://sourcegraph.com/github.com/EleutherAI/gpt-neox).
