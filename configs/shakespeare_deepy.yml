@@ -15,7 +15,7 @@
   # "weight_by_num_documents": false,
   # "weighted_sampler_alpha": 0.3,
 
-  "tokenizer_type": "CharLevelTokenizer",
+  #"tokenizer_type": "CharLevelTokenizer",
   #"vocab_file": "tokenizer/gpt2-vocab.json",
   #"merge_file": "tokenizer/gpt2-merges.txt",
 
