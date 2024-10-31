@@ -83,6 +83,9 @@
   "steps_per_print": 10,
   "wall_clock_breakdown": true,
 
+  # Required for model conversion into HF format
+  "tokenizer_type": "CharLevelTokenizer",
+
   # additional deepspeed args not specified above
   "deepspeed_extra_args": {
     "comms_logger": {
