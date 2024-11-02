@@ -1,6 +1,7 @@
 {
     "name": "Python ML Dev Container",
     "dockerFile": "Dockerfile",
+    "runArgs": ["--shm-size=2g"],
     "context": "..",
     "customizations": {
         "vscode": {
