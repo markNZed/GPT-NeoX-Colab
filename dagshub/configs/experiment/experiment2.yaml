@@ -1,4 +1,5 @@
-# Experiment 2 configurations
+# configs/experiment/experiment2.yaml
+
 model:
   hidden_dim: 128
 

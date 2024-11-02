@@ -1,3 +1,5 @@
+# model.py
+
 import pytorch_lightning as pl
 from torch import nn, optim
 
@@ -53,8 +55,25 @@ class LitAutoEncoder(pl.LightningModule):
         x, _ = batch
         x_hat = self(x)
         loss = nn.functional.mse_loss(x_hat, x)
-        self.log('train_loss', loss)
+        self.log("train_loss", loss)
         return loss
+
+    def validation_step(self, batch, batch_idx):
+        """
+        Validation step for the model.
+
+        Args:
+            batch (Tensor): A batch of data.
+            batch_idx (int): Batch index.
+
+        Returns:
+            Tensor: The calculated loss for the batch.
+        """
+        x, _ = batch
+        x_hat = self(x)
+        val_loss = nn.functional.mse_loss(x_hat, x)
+        self.log("val_loss", val_loss)
+        return val_loss
 
     def configure_optimizers(self):
         """

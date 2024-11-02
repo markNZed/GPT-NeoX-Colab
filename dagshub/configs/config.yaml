@@ -1,6 +1,8 @@
-# Default configuration file
+# configs/config.yaml
+
 defaults:
-  - experiment: experiment1  # Set default experiment
+  - _self_  # Include the base configuration itself
+  - experiment: experiment1  # Default experiment
 
 # General model settings
 model:
@@ -11,3 +13,12 @@ training:
   batch_size: 32
   learning_rate: 0.001
   epochs: 2
+
+# Data settings
+data:
+  root: ${hydra:runtime.cwd}/data  # Store data relative to the working directory
+
+# Prevent Hydra from changing the working directory
+hydra:
+  run:
+    dir: .

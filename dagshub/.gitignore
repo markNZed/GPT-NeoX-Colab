@@ -2,3 +2,8 @@ downloaded_data
 outputs
 data
 mlruns
+all.txt
+train.log
+experiment.log
+.hydra
+checkpoints
