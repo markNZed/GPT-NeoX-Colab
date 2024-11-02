@@ -1,0 +1,29 @@
+{
+    "name": "Python ML Dev Container",
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.pythonPath": "/usr/local/bin/python",
+                "python.formatting.provider": "black",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true,
+                "python.linting.mypyEnabled": true,
+                "jupyter.jupyterServerType": "local"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "ms-python.black-formatter",
+                "ms-python.flake8",
+                "ms-python.isort",
+                "ms-python.mypy-type-checker"
+            ]
+        }
+    },
+    "postCreateCommand": "pip install -r requirements",
+    "remoteUser": "vscode"
+}
+  

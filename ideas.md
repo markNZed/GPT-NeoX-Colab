@@ -4,4 +4,4 @@
   - shttps://github.com/EleutherAI/gpt-neox?tab=readme-ov-file#using-custom-data
 - Can use TPU v2-8 to experiment with multi-GPU setups in Colab?
 - https://app.primeintellect.ai/intelligence could allow for distributed training
-- Maybe we can avoid 
+- https://dagshub.com MLFlow
