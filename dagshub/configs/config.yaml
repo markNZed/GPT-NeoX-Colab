@@ -1,0 +1,13 @@
+# Default configuration file
+defaults:
+  - experiment: experiment1  # Set default experiment
+
+# General model settings
+model:
+  hidden_dim: 64  # Default hidden dimension
+
+# General training settings
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  epochs: 2

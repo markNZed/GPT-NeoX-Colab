@@ -1,0 +1,7 @@
+# Experiment 1 configurations
+model:
+  hidden_dim: 64
+
+training:
+  learning_rate: 0.001
+  batch_size: 32
