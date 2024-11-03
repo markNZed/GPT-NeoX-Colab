@@ -1,5 +1,7 @@
 {
     "name": "Python ML Dev Container",
+    "workspaceFolder": "/workspaces",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces,type=bind",
     "dockerFile": "Dockerfile",
     "runArgs": ["--shm-size=2g"],
     "context": "..",
