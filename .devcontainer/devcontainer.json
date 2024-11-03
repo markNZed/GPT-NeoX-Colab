@@ -24,7 +24,7 @@
             ]
         }
     },
-    "postCreateCommand": "pip install -r requirements",
+    "postCreateCommand": "pip install -r requirements && git lfs install",
     "remoteUser": "vscode"
 }
   
