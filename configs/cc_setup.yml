@@ -15,12 +15,8 @@
   # "weight_by_num_documents": false,
   # "weighted_sampler_alpha": 0.3,
 
-  "vocab_file": "data/gpt2-vocab.json",
-  "merge_file": "data/gpt2-merges.txt",
-
-  "save": "checkpoints",
-  "load": "checkpoints",
-  "checkpoint_validation_with_forward_pass": False,
+#  "vocab_file": "data/gpt2-vocab.json",
+#  "merge_file": "data/gpt2-merges.txt",
 
   "tensorboard_dir": "tensorboard",
   "log_dir": "logs",
