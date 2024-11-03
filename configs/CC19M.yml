@@ -4,6 +4,10 @@
   "tokenizer_type": "GPT2BPETokenizer",
   "vocab_file": "data/gpt2-vocab.json",
   "merge_file": "data/gpt2-merges.txt",
+  "save": "checkpoints",
+  "load": "checkpoints",
+  "checkpoint_validation_with_forward_pass": False,
+
 
   # model settings
   "num_layers": 6,
