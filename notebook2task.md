@@ -42,37 +42,6 @@ The notebook should be structured to guide users through the entire process, wit
   - Briefly describe the goal of training a GPT-NeoX model for Python code completion from scratch.
   - Emphasize the focus on exploring training algorithms.
 
-- **Overview of GPT-NeoX and Its Relevance:**
-  - Provide a short introduction to GPT-NeoX and its capabilities.
-  - Discuss why GPT-NeoX is suitable for code completion tasks.
-
-#### **2. Setup and Environment Configuration:**
-
-- **Clone the GPT-NeoX Repository:**
-  - Include commands to clone the repository from GitHub.
-
-  ```bash
-  !git clone https://github.com/EleutherAI/gpt-neox.git
-  %cd gpt-neox
-  ```
-
-- **Install Dependencies:**
-  - Install required Python packages and libraries.
-  - Ensure compatibility with Colab's environment.
-
-  ```bash
-  !pip install -r requirements/requirements.txt
-  !pip install -e .
-  ```
-
-- **Verify GPU Availability:**
-  - Include code to check and display the GPU information.
-
-  ```python
-  import torch
-  print(torch.cuda.get_device_name(0))
-  ```
-
 #### **3. Data Preparation:**
 
 - **Dataset Selection:**
@@ -87,48 +56,14 @@ The notebook should be structured to guide users through the entire process, wit
   - Train a custom tokenizer suitable for Python code.
   - Use a character-level tokenizer or a subword tokenizer trained on the code dataset.
 
-  ```python
-  from tokenizers import ByteLevelBPETokenizer
-
-  tokenizer = ByteLevelBPETokenizer()
-  tokenizer.train(files=["path/to/python_code.txt"], vocab_size=5000, min_frequency=2, special_tokens=[
-      "<s>",
-      "<pad>",
-      "</s>",
-      "<unk>",
-      "<mask>",
-  ])
-  tokenizer.save_model("tokenizer")
-  ```
-
 #### **4. Model Configuration:**
 
 - **Define a Custom GPT-NeoX Configuration:**
   - Create a YAML configuration file tailored for training on a T4 GPU.
   - Adjust model parameters to balance performance and resource constraints.
 
-  **Example Configuration Parameters:**
-
-  ```yaml
-  hidden-size: 512
-  num-layers: 6
-  num-attention-heads: 8
-  max-position-embeddings: 1024
-  micro-batch-size: 1
-  global-batch-size: 8
-  train-iters: 10000
-  lr: 5e-4
-  fp16: true
-  optimizer:
-    type: "Adam"
-    params:
-      lr: 5e-4
-      weight_decay: 0.01
-  ```
-
 - **Explanation of Configuration Choices:**
   - Provide rationale for the chosen hyperparameters.
-  - Discuss how they affect training time, memory usage, and model performance.
 
 #### **5. Training Loop with W&B Integration:**
 
@@ -164,11 +99,6 @@ The notebook should be structured to guide users through the entire process, wit
 - **Modular Code for Easy Modification:**
   - Structure code to allow easy swapping of training algorithms and hyperparameters.
 
-- **Examples of Training Algorithm Variations:**
-  - Include sections demonstrating how to change optimizers (e.g., SGD, AdamW).
-  - Show how to adjust learning rate schedules (e.g., cosine annealing, linear decay).
-  - Provide examples of incorporating techniques like gradient clipping or weight decay.
-
 - **Instructions for Running Different Experiments:**
   - Explain how to modify configuration files or command-line arguments to test different setups.
   - Encourage users to document their experiments using W&B.
@@ -179,7 +109,7 @@ The notebook should be structured to guide users through the entire process, wit
   - Use appropriate metrics for code completion, such as perplexity, token accuracy, or BLEU scores.
 
 - **Implement Evaluation Scripts:**
-  - Include code to evaluate the model on a validation set.
+  - Include code to evaluate the model on a public benchmark
   - Log evaluation metrics to W&B for comparison.
 
 - **Visualization of Results:**
@@ -194,25 +124,6 @@ The notebook should be structured to guide users through the entire process, wit
 
 - **W&B Collaboration:**
   - Utilize W&B's team features to share experiment results and dashboards.
-  - Encourage team members to compare experiments and discuss findings through W&B reports.
-
-#### **9. Conclusion and Next Steps:**
-
-- **Summary of Findings:**
-  - Provide a section to summarize results from different training algorithms.
-  - Discuss insights gained from the experiments.
-
-- **Suggestions for Further Exploration:**
-  - Propose ideas for additional experiments or model improvements.
-  - Encourage collaboration and knowledge sharing among team members.
-
-#### **10. Appendices and Resources:**
-
-- **References:**
-  - Include links to GPT-NeoX documentation, W&B guides, and relevant research papers.
-
-- **Troubleshooting Tips:**
-  - Provide solutions for common issues, such as memory errors or installation problems.
 
 ---
 
@@ -255,10 +166,6 @@ The notebook should be structured to guide users through the entire process, wit
 - **Experiment Tracking:**
   - Log hyperparameters, training metrics, model checkpoints, and evaluation results.
   - Use W&B's comparison features to analyze different training runs.
-
-- **Reports and Documentation:**
-  - Encourage the creation of W&B Reports to document experiment results and insights.
-  - Use reports to facilitate knowledge sharing within the team.
 
 ---
 

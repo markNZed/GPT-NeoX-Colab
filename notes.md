@@ -9,3 +9,4 @@
 - 1.2GB so could increase batch by at least 10x
 - The deepy.py script assumes it is running in the root of GTP-NeoX repo
 - Maybe we should install gpt-neox ass a submodule ?
+- Colab renewal 24th
