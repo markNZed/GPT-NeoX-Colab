@@ -42,13 +42,13 @@
     "contiguous_gradients": true
   },
 
-  "train_micro_batch_size_per_gpu": 512,
+  "train_micro_batch_size_per_gpu": 256,
   "gradient_accumulation_steps": 1,
   "data_impl": "mmap",
   "num_workers": 1,
 
   # activation checkpointing
-  "checkpoint_activations": true,
+  "checkpoint_activations": false, # We are not memory bound
   "checkpoint_num_layers": 1,
   "partition_activations": true,
   "synchronize_each_layer": true,
@@ -70,8 +70,8 @@
     "min_loss_scale": 1
   },
 
-  "train_iters": 400,
-  "lr_decay_iters": 400,
+  "train_iters": 800,
+  "lr_decay_iters": 800,
   "distributed_backend": "nccl",
   "lr_decay_style": "linear",
   "warmup": 0.01,
