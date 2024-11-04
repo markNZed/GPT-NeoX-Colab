@@ -5,3 +5,4 @@
 - Can use TPU v2-8 to experiment with multi-GPU setups in Colab?
 - https://app.primeintellect.ai/intelligence could allow for distributed training
 - https://dagshub.com MLFlow
+- Should we be using GPTNeoXTokenizerFast ?
