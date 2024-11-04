@@ -41,6 +41,7 @@ This repository provides a collection of example Google Colab notebooks that gui
 - Includes dataset recommendations and preprocessing steps specific to Python code.
 - Detailed sections on customizing training algorithms and hyper-parameters.
 - Integrated W&B tracking to facilitate comparison of different model configurations.
+- Evaluation on a public benchmark
 
 [**Open in Colab ➔**](notebooks/code_completion_training.ipynb)
 
