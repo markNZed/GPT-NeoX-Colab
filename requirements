@@ -6,3 +6,4 @@ jupyterlab
 torchvision
 hypster
 hydra-core
+pip install google-colab
