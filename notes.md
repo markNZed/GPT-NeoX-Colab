@@ -10,3 +10,5 @@
 - The deepy.py script assumes it is running in the root of GTP-NeoX repo
 - Maybe we should install gpt-neox ass a submodule ?
 - Colab renewal 24th
+- To use this as a module: 
+  - pip install -e .
