@@ -13,7 +13,10 @@ from tensorboard.backend.event_processing import event_accumulator  # type: igno
 from transformers import GPTNeoXForCausalLM  # type: ignore
 import torch
 from dotenv import load_dotenv
-load_dotenv()
+
+
+REPO_PATH = "/content/GPT-NeoX-Colab"
+load_dotenv(dotenv_path=REPO_PATH) 
 
 
 def is_colab():
@@ -378,7 +381,7 @@ def install_git_annex():
         run("apt-get install -y git-annex")
 
 
-def enable_remote(repo_path="/content/GPT-NeoX-Colab"):
+def enable_remote(repo_path=REPO_PATH):
     """Enable git annex backblaze remote."""
     os.chdir(repo_path)
     run("git annex enableremote backblaze")
@@ -386,8 +389,8 @@ def enable_remote(repo_path="/content/GPT-NeoX-Colab"):
 
 def sync_and_get_data():
     """Sync git-annex and download data from backblaze with error handling."""
-    os.environ["AWS_ACCESS_KEY_ID"] = os.getenv["AWS_ACCESS_KEY_ID"]
-    os.environ["AWS_SECRET_ACCESS_KEY"] = os.getenv["AWS_SECRET_ACCESS_KEY"]
+    os.environ["AWS_ACCESS_KEY_ID"] = os.getenv("AWS_ACCESS_KEY_ID")
+    os.environ["AWS_SECRET_ACCESS_KEY"] = os.getenv("AWS_SECRET_ACCESS_KEY")
     try:
         print("Starting git annex sync...")
         run("git annex sync --no-push")
