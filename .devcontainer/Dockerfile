@@ -9,22 +9,29 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
-    git
-
-RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
-
-RUN apt-get install -y \
-    git-lfs \
+    git \
+    git-annex \
     wget \
-    && rm -rf /var/lib/apt/lists/*
-
+    vim
+    
 # Install Python dependencies
-COPY requirements /tmp/requirements
+COPY requirements.txt /tmp/requirements.txt
 RUN pip install --upgrade pip && \
-    pip install -r /tmp/requirements
+    pip install -r /tmp/requirements.txt
 
 # Install JupyterLab
-RUN pip install jupyterlab
+RUN pip install jupyterlab \
+    lightning \
+    mlflow  \
+    dagshub \
+    torchvision \
+    hypster \
+    hydra-core \
+    python-dotenv \
+    transformers \
+    tensorboard \
+    boto3 \
+    torch
 
 # Create a non-root user
 ARG USERNAME=vscode

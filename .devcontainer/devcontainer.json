@@ -3,7 +3,7 @@
     "workspaceFolder": "/workspace",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
     "dockerFile": "Dockerfile",
-    "runArgs": ["--shm-size=2g"],
+    "runArgs": ["--shm-size=2g", "--env-file=${localWorkspaceFolder}/.env"],
     "context": "..",
     "customizations": {
         "vscode": {
@@ -26,7 +26,7 @@
             ]
         }
     },
-    "postCreateCommand": "pip install -r requirements && git lfs install",
+    "postCreateCommand": "bash scripts/postCreateCommand.sh",
     "remoteUser": "vscode"
 }
   
