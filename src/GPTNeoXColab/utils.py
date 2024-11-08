@@ -15,10 +15,11 @@ import torch
 from dotenv import load_dotenv
 
 
-REPO_PATH = "/content/GPT-NeoX-Colab"
+def get_repo_path():
+    return "/content/GPT-NeoX-Colab"
 
 
-def load_env(dotenv_path=REPO_PATH):
+def load_env(dotenv_path=get_repo_path()):
     load_dotenv(dotenv_path=dotenv_path)
 
 
@@ -384,7 +385,7 @@ def install_git_annex():
         run("apt-get install -y git-annex")
 
 
-def enable_remote(repo_path=REPO_PATH):
+def enable_remote(repo_path=get_repo_path()):
     """Enable git annex backblaze remote."""
     os.chdir(repo_path)
     run("git annex enableremote backblaze")
