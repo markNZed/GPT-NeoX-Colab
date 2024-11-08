@@ -399,5 +399,3 @@ def sync_and_get_data():
         print(f"Command output: {e.output.decode() if e.output else 'No output'}")
         print(f"Command error message: {e.stderr.decode() if e.stderr else 'No additional error info.'}")
         raise  # Re-raise the exception to signal failure
-
-

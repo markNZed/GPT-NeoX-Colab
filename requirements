@@ -7,3 +7,5 @@ torchvision
 hypster
 hydra-core
 python-dotenv
+transformers
+tensorboard
