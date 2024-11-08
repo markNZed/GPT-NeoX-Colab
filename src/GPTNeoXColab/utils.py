@@ -16,7 +16,10 @@ from dotenv import load_dotenv
 
 
 REPO_PATH = "/content/GPT-NeoX-Colab"
-load_dotenv(dotenv_path=REPO_PATH) 
+
+
+def load_env(dotenv_path=REPO_PATH):
+    load_dotenv(dotenv_path=dotenv_path)
 
 
 def is_colab():
