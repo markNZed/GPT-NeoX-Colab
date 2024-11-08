@@ -5,6 +5,7 @@ import boto3  # type: ignore
 from botocore.config import Config  # type: ignore
 from botocore.exceptions import ClientError  # type: ignore
 from dotenv import load_dotenv
+from google.colab import userdata  # type: ignore
 
 
 def load_env():
@@ -34,8 +35,6 @@ def setup_ssh_connection(ssh_connect=False):
     Sets up an SSH connection to the Colab instance for remote access, such as from VS Code.
     """
     if ssh_connect and is_colab():
-        # type: ignore
-        from google.colab import userdata  # type: ignore
 
         import pexpect  # type: ignore
         import getpass
@@ -150,7 +149,7 @@ def install_git_annex():
     try:
         run("git-annex version")
         print("git-annex is already installed.")
-    except Exception as e:
+    except Exception:
         print("git-annex not found. Installing...")
         run("apt-get update")
         run("apt-get install -y git-annex")
@@ -218,8 +217,7 @@ def download_my_env(upload_env=False):
 def upload_my_env(upload_env=False):
     if (not upload_env):
         return
-    key_id_rw = "003cb130fbeaa800000000002"
-    b2_rw = get_b2_resource(os.getenv("BB_ENDPOINT"), key_id_rw, userdata.get('B2_APP_KEY_RW'))
+    b2_rw = get_b2_resource(os.getenv("BB_ENDPOINT"), os.getenv("BB_ACCESS_KEY_RW_ID"), userdata.get("B2_APP_KEY_RW"))
     print("my_env.tar not found, proceeding with compression.")
     # Change directory (if needed) to ensure paths are correct
     os.chdir("/content")
@@ -227,7 +225,7 @@ def upload_my_env(upload_env=False):
     # Compresses 5.5G to 3.1G
     run("time tar cf - my_env | pv -p -e -r -b | pigz -p 4 -1 > my_env.tar.gz")
     # Upload to BackBlaze
-    if userdata.get('B2_APP_KEY_RW'):
+    if userdata.get("B2_APP_KEY_RW"):
         response = upload_file(os.getenv("BB_BUCKET"), "/content", "my_env.tar.gz", b2_rw)
         print("Upload response:", response)
     else:
