@@ -20,7 +20,7 @@ def get_repo_path():
 
 
 def load_env(dotenv_path=get_repo_path()):
-    load_dotenv(dotenv_path=dotenv_path)
+    load_dotenv(dotenv_path)
     print("Loaded environment variables from:", dotenv_path)
 
 
