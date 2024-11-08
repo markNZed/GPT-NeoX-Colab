@@ -375,7 +375,7 @@ def install_git_annex():
     try:
         run("git-annex version")
         print("git-annex is already installed.")
-    except subprocess.CalledProcessError:
+    except Exception as e:
         print("git-annex not found. Installing...")
         run("apt-get update")
         run("apt-get install -y git-annex")
