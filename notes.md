@@ -5,4 +5,5 @@
 - The deepy.py script assumes it is running in the root of GTP-NeoX repo
 - Maybe we should install gpt-neox as a submodule ?
 - Colab renewal 24th
-- Branch for work on setup
+- Branch for work on venv setup
+  - https://colab.research.google.com/github/markNZed/GPT-NeoX-Colab/blob/venv/notebooks/shakespeare_trainingV2.ipynb
