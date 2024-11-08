@@ -9,3 +9,5 @@ hydra-core
 python-dotenv
 transformers
 tensorboard
+boto3
+torch
