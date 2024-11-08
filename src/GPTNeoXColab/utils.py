@@ -12,6 +12,8 @@ import matplotlib.pyplot as plt
 from tensorboard.backend.event_processing import event_accumulator  # type: ignore
 from transformers import GPTNeoXForCausalLM  # type: ignore
 import torch
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def is_colab():
@@ -354,3 +356,48 @@ def save_checkpoints_to_drive(source_folder, dest_folder):
     dest_versioned = get_versioned_folder_path(dest_folder)
     shutil.copytree(source_folder, dest_versioned)
     print(f"Folder copied successfully to Google Drive as '{dest_versioned}'!")
+
+
+def run(cmd, check=False):
+    """Run a shell command and return its output."""
+    # print(f"Running command: {cmd}")
+    result = subprocess.run(cmd, shell=True, capture_output=True, check=check)
+    if result.returncode != 0:
+        raise Exception(f"Command failed with return code {result.returncode} {result}")
+    return result
+
+
+def install_git_annex():
+    """Install git-annex if it's not available."""
+    try:
+        run("git-annex version")
+        print("git-annex is already installed.")
+    except subprocess.CalledProcessError:
+        print("git-annex not found. Installing...")
+        run("apt-get update")
+        run("apt-get install -y git-annex")
+
+
+def enable_remote(repo_path="/content/GPT-NeoX-Colab"):
+    """Enable git annex backblaze remote."""
+    os.chdir(repo_path)
+    run("git annex enableremote backblaze")
+
+
+def sync_and_get_data():
+    """Sync git-annex and download data from backblaze with error handling."""
+    os.environ["AWS_ACCESS_KEY_ID"] = os.getenv["AWS_ACCESS_KEY_ID"]
+    os.environ["AWS_SECRET_ACCESS_KEY"] = os.getenv["AWS_SECRET_ACCESS_KEY"]
+    try:
+        print("Starting git annex sync...")
+        run("git annex sync --no-push")
+        print("Sync successful. Fetching data from backblaze...")
+        run("git annex get . --from=backblaze")
+        print("Data retrieval successful.")
+    except subprocess.CalledProcessError as e:
+        print("Error during git annex sync or data retrieval.")
+        print(f"Command output: {e.output.decode() if e.output else 'No output'}")
+        print(f"Command error message: {e.stderr.decode() if e.stderr else 'No additional error info.'}")
+        raise  # Re-raise the exception to signal failure
+
+
