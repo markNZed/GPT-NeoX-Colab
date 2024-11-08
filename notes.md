@@ -5,4 +5,4 @@
 - The deepy.py script assumes it is running in the root of GTP-NeoX repo
 - Maybe we should install gpt-neox as a submodule ?
 - Colab renewal 24th
-- Branhc for work on setup
+- Branch for work on setup
