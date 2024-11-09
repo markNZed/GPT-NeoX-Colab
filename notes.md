@@ -18,3 +18,7 @@
   - shakespeare_training+tb+backblaze+venv+mlflow.ipynb # add hydra and MLFlow
   - shakespeare_experiment.ipynb # Run experiments using dagshub and present results
 - https://github.com/pytorch/torchtitan might be a good alternative to GPTNeoX  
+- Adding to git annex:
+  - git annex add data/shakespeare*
+  - git commit -m "Added Shakespeare files to annex"
+
