@@ -21,4 +21,6 @@
 - Adding to git annex:
   - git annex add data/shakespeare*
   - git commit -m "Added Shakespeare files to annex"
+  - git annex sync backblaze
+  - git annex copy data/shakespeare* --to backblaze
 
