@@ -1,4 +1,4 @@
-from GPTNeoXColab import utilsColab
-utilsColab.install_git_annex()
-utilsColab.enable_remote()
-utilsColab.sync_and_get_data()
+from GPTNeoXColab.utils.colab import install_git_annex, enable_remote, sync_and_get_data
+install_git_annex()
+enable_remote()
+sync_and_get_data()

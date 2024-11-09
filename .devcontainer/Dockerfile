@@ -44,6 +44,9 @@ RUN groupadd --gid $USER_GID $USERNAME && \
     echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME && \
     chmod 0440 /etc/sudoers.d/$USERNAME
 
+RUN mkdir /content && \
+    chown -R $USERNAME:$USERNAME /content
+
 USER $USERNAME
 
 # Set the default working directory
