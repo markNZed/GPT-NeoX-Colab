@@ -12,20 +12,22 @@ RUN apt-get update && apt-get install -y \
     git \
     git-annex \
     wget \
-    vim
+    vim \
+    pigz \
+    pv \
+    screen 
     
 # Install Python dependencies
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install --upgrade pip && \
     pip install -r /tmp/requirements.txt
 
-# Install JupyterLab
-RUN pip install jupyterlab \
+RUN pip install \
+    jupyterlab \
     lightning \
     mlflow  \
     dagshub \
     torchvision \
-    hypster \
     hydra-core \
     python-dotenv \
     transformers \

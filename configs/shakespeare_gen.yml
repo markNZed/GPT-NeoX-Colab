@@ -18,7 +18,7 @@
   "sample_input_file": "sample_input.txt",
   "sample_output_file": "sample_output.txt",
 
-  "data_path": "processed_data/tinyshakespeare_text_document",
+  "data_path": "processed_data/shakespeare_text_document",
 
   "save": "checkpoints",
   "load": "checkpoints",

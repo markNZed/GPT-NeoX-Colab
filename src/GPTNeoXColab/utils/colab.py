@@ -78,7 +78,7 @@ def setup_ssh_connection(ssh_connect=False):
             print(f"ssh -L 9999:localhost:2223 {userdata.get('REMOTE_SSH')}")
     else:
         print(
-            "This function requires Google Colab and won't work in other environments."
+            "This function requires Google Colab to get REMOTE_SSH and won't work in other environments."
         )
 
 
@@ -121,21 +121,6 @@ def download_file_from_b2(bucket, directory, file, key_name, b2):
     except ClientError as ce:
         print("Download error:", ce)
         traceback.print_exc()
-
-
-# Environment Setup
-def download_venv(use_backblaze=False, b2_params=None):
-    """
-    Prepares the environment by downloading and unpacking the environment from
-    Backblaze if not already present.
-    """
-    if not os.path.exists("/content/my_env.tar"):
-        if use_backblaze and b2_params:
-            b2 = get_b2_resource(**b2_params)
-            download_file_from_b2(
-                b2_params["bucket"], "/content", "my_env.tar.gz", "my_env.tar.gz", b2
-            )
-            # Add commands to unzip and untar as required
 
 
 def run(cmd, check=False):
@@ -224,6 +209,7 @@ def download_my_env(upload_env=False):
         print("Downloading my_env.tar.gz")
         download_file(os.getenv("BB_BUCKET"), "/content", "my_env.tar.gz", "my_env.tar.gz", b2_r)
         print("Unzipping my_env.tar.gz")
+        run("apt-get install -y pigz pv")
         run("pigz -d -p 4 /content/my_env.tar.gz")  # Decompress using 4 cores (adjust as needed)
         print("Untarring my_env.tar.gz")
         run("pv /content/my_env.tar | tar -xf - -C /content")
@@ -238,6 +224,7 @@ def upload_my_env(upload_env=False):
     os.chdir("/content")
     # Compress the tar archive with pigz, showing a progress indicator
     # Compresses 5.5G to 3.1G
+    run("apt-get install -y pigz pv")
     run("time tar cf - my_env | pv -p -e -r -b | pigz -p 4 -1 > my_env.tar.gz")
     # Upload to BackBlaze
     if userdata.get("B2_APP_KEY_RW"):

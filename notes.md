@@ -7,3 +7,14 @@
 - Colab renewal 24th
 - Branch for work on venv setup
   - https://colab.research.google.com/github/markNZed/GPT-NeoX-Colab/blob/venv/notebooks/shakespeare_trainingV2.ipynb
+- Different levels of complexity in the notebook:
+  - shakespeare_training.ipynb
+  - shakespeare_training+tb.ipynb # Add tensorboard
+  - shakespeare_upload_data.ipynb # Create data and upload to backblaze
+  - shakespeare_training+tb+backblaze.ipynb # use data from backblaze (only processed)
+  - shakespeare_venv_data.ipynb # Create venv and upload to backblaze
+  - shakespeare_training+tb+backblaze+venv.ipynb # add option upload of model to backblaze
+  - shakespeare_inference.ipynb # download model form backblaze and use it
+  - shakespeare_training+tb+backblaze+venv+mlflow.ipynb # add hydra and MLFlow
+  - shakespeare_experiment.ipynb # Run experiments using dagshub and present results
+- https://github.com/pytorch/torchtitan might be a good alternative to GPTNeoX  

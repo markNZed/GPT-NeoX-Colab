@@ -10,7 +10,7 @@ from transformers import GPTNeoXForCausalLM  # type: ignore
 import torch
 
 # Dataset Utilities
-def prepare_custom_dataset(input_txt_file, output_jsonl_file):
+def text2jsonl(input_txt_file, output_jsonl_file):
     """
     Reads a text file and writes a JSONL file in the required format for
     training.
