@@ -11,3 +11,4 @@ transformers
 tensorboard
 boto3
 torch
+pickleshare
