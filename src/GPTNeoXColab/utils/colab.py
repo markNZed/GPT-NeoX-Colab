@@ -155,7 +155,7 @@ def sync_annex():
     try:
         print("Starting git annex sync...")
         run("git annex sync --no-push")
-        print("Sync successful. Fetching data from backblaze...")
+        print("Sync successful.")
     except subprocess.CalledProcessError as e:
         print("Error during git annex sync.")
         print(f"Command output: {e.output.decode() if e.output else 'No output'}")

@@ -23,4 +23,5 @@
   - git commit -m "Added Shakespeare files to annex"
   - git annex sync backblaze
   - git annex copy data/shakespeare* --to backblaze
+  - git annex sync backblaze
 
