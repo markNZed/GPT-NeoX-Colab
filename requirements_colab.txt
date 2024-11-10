@@ -1,0 +1,4 @@
+dagshub
+hydra-core
+python-dotenv
+dvc[s3]
