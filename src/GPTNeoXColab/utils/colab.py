@@ -132,12 +132,6 @@ def run(cmd, check=False):
     return result
 
 
-def enable_remote():
-    """Enable git annex backblaze remote."""
-    return
-    run("git annex enableremote backblaze")
-
-
 def fetch_data(path="."):
     """Sync DVC and download data from backblaze with error handling."""
     os.environ["AWS_ACCESS_KEY_ID"] = os.getenv("AWS_ACCESS_KEY_ID")
