@@ -1,8 +1,0 @@
-# configs/experiment/experiment2.yaml
-
-model:
-  hidden_dim: 128
-
-training:
-  learning_rate: 0.0005
-  batch_size: 64
