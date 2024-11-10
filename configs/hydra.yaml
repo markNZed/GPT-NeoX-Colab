@@ -1,8 +1,12 @@
 defaults:
   - _self_  # Ensures this file’s content is processed before any overrides
-  - shakespeare
+  - experiments: experiment1
 
 # Base settings
-output_dir: ./experiments/outputs
+output_dir: ../outputs
 experiment_name: "base_experiment"
 seed: 42
+
+dagshub:
+  repo_owner: "MarkNZed" #dagshub username
+  repo_name: "GPT-NeoX-Colab"

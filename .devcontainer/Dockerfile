@@ -24,7 +24,6 @@ RUN pip install --upgrade pip && \
 RUN pip install \
     jupyterlab \
     lightning \
-    mlflow  \
     dagshub \
     torchvision \
     hydra-core \
@@ -33,7 +32,8 @@ RUN pip install \
     tensorboard \
     boto3 \
     torch \
-    dvc[s3]
+    dvc[s3] \
+    mlflow[extras]
 
 # Create a non-root user
 ARG USERNAME=vscode

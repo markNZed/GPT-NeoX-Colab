@@ -1,4 +1,4 @@
 # Hydra configuration 
 experiment_name: "experiment_1"
 seed: 123
-output_dir: ./outputs/experiment_1
+
