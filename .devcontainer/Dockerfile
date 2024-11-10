@@ -51,5 +51,8 @@ RUN mkdir /content && \
 
 USER $USERNAME
 
+RUN pip install dvc
+ENV PATH="/home/vscode/.local/bin:${PATH}"
+
 # Set the default working directory
 WORKDIR /workspace
