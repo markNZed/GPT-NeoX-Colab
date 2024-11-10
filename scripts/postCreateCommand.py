@@ -1,2 +1,2 @@
-from GPTNeoXColab.utils.colab import enable_remote, fetch_data
-#fetch_data()
+from GPTNeoXColab.utils.colab import fetch_data  # type: ignore[import]
+# fetch_data()
