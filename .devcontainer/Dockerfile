@@ -10,7 +10,6 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
     git \
-    git-annex \
     wget \
     vim \
     pigz \
@@ -33,7 +32,8 @@ RUN pip install \
     transformers \
     tensorboard \
     boto3 \
-    torch
+    torch \
+    dvc[s3]
 
 # Create a non-root user
 ARG USERNAME=vscode
@@ -50,9 +50,6 @@ RUN mkdir /content && \
     chown -R $USERNAME:$USERNAME /content
 
 USER $USERNAME
-
-RUN pip install dvc[s3]
-ENV PATH="/home/vscode/.local/bin:${PATH}"
 
 # Set the default working directory
 WORKDIR /workspace

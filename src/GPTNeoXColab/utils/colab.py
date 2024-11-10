@@ -132,46 +132,21 @@ def run(cmd, check=False):
     return result
 
 
-def install_git_annex():
-    """Install git-annex if it's not available."""
-    try:
-        run("git-annex version")
-        print("git-annex is already installed.")
-    except Exception:
-        print("git-annex not found. Installing...")
-        run("apt-get update")
-        run("apt-get install -y git-annex")
-
-
 def enable_remote():
     """Enable git annex backblaze remote."""
+    return
     run("git annex enableremote backblaze")
 
 
-def sync_annex():
-    """Sync git-annex and download data from backblaze with error handling."""
-    os.environ["AWS_ACCESS_KEY_ID"] = os.getenv("AWS_ACCESS_KEY_ID")
-    os.environ["AWS_SECRET_ACCESS_KEY"] = os.getenv("AWS_SECRET_ACCESS_KEY")
-    try:
-        print("Starting git annex sync...")
-        run("git annex sync --no-push")
-        print("Sync successful.")
-    except subprocess.CalledProcessError as e:
-        print("Error during git annex sync.")
-        print(f"Command output: {e.output.decode() if e.output else 'No output'}")
-        print(f"Command error message: {e.stderr.decode() if e.stderr else 'No additional error info.'}")
-        raise  # Re-raise the exception to signal failure
-
-
 def fetch_data(path="."):
-    """Sync git-annex and download data from backblaze with error handling."""
+    """Sync DVC and download data from backblaze with error handling."""
     os.environ["AWS_ACCESS_KEY_ID"] = os.getenv("AWS_ACCESS_KEY_ID")
     os.environ["AWS_SECRET_ACCESS_KEY"] = os.getenv("AWS_SECRET_ACCESS_KEY")
     try:
-        run(f"git annex get {path} --from=backblaze")
+        run(f"dvc pull {path}")
         print("Data retrieval successful.")
     except subprocess.CalledProcessError as e:
-        print("Error during git annex data retrieval.")
+        print("Error during DVC data retrieval.")
         print(f"Command output: {e.output.decode() if e.output else 'No output'}")
         print(f"Command error message: {e.stderr.decode() if e.stderr else 'No additional error info.'}")
         raise  # Re-raise the exception to signal failure
