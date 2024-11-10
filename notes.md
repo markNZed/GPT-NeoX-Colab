@@ -19,9 +19,14 @@
   - shakespeare_experiment.ipynb # Run experiments using dagshub and present results
 - https://github.com/pytorch/torchtitan might be a good alternative to GPTNeoX  
 - Adding to git annex:
+  - git annex enableremote backblaze
+  - git annex sync backblaze
   - git annex add data/shakespeare*
   - git commit -m "Added Shakespeare files to annex"
-  - git annex sync backblaze
+  - git push
   - git annex copy data/shakespeare* --to backblaze
-  - git annex sync backblaze
-
+  - #Notice here we sync all the endpoints
+  - git annex sync 
+- How to allow for easy git annex upload from colab?
+  - Let the user set a number of secrets and/or use the .env
+  - Not bad that it works without backblaze
