@@ -12,4 +12,5 @@ tensorboard
 boto3
 torch
 pickleshare
-dvc
+dvc[s3]
+

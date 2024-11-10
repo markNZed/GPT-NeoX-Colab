@@ -30,3 +30,8 @@
 - How to allow for easy git annex upload from colab?
   - Let the user set a number of secrets and/or use the .env
   - Not bad that it works without backblaze
+- DVC
+  - dvc init
+  - dvc remote add -d backblaze s3://GPT-NeoX-Colab/dvc
+  - dvc remote modify backblaze endpointurl https://s3.eu-central-003.backblazeb2.com 
+

@@ -51,7 +51,7 @@ RUN mkdir /content && \
 
 USER $USERNAME
 
-RUN pip install dvc
+RUN pip install dvc[s3]
 ENV PATH="/home/vscode/.local/bin:${PATH}"
 
 # Set the default working directory
