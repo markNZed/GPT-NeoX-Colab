@@ -1,0 +1,8 @@
+defaults:
+  - _self_  # Ensures this file’s content is processed before any overrides
+  - shakespeare
+
+# Base settings
+output_dir: ./experiments/outputs
+experiment_name: "base_experiment"
+seed: 42

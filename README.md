@@ -71,8 +71,8 @@ GPT-NeoX-Colab/
 │   ├── shakespeare_training.ipynb
 │   └── code_completion_training.ipynb
 ├── configs/
-│   ├── shakespeare.yml
-│   └── code_completion.yml
+│   ├── shakespeare.yaml
+│   └── code_completion.yaml
 ├── data/
 │   └── (Data instructions and files)
 ├── tokenizer/

@@ -46,7 +46,7 @@ This notebook should guide the user step-by-step through setting up, configuring
     ├── notebooks
     │   └── shakespeare_training_notebook.ipynb
     ├── configs
-    │   └── shakespeare_config.yml
+    │   └── shakespeare_config.yaml
     ├── data
     │   └── (Data preparation instructions)
     ├── tokenizer

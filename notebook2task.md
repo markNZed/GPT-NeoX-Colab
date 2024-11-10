@@ -90,7 +90,7 @@ The notebook should be structured to guide users through the entire process, wit
   # Example command to start training with W&B
   !python deepy.py train.py \
       --conf_dir=configs \
-      --conf_file=code_completion.yml \
+      --conf_file=code_completion.yaml \
       --wandb_project='gpt-neox-code-completion'
   ```
 
@@ -137,7 +137,7 @@ The notebook should be structured to guide users through the entire process, wit
     ├── notebooks
     │   └── code_completion_notebook.ipynb
     ├── configs
-    │   └── code_completion.yml
+    │   └── code_completion.yaml
     ├── data
     │   └── (Include instructions for data download)
     ├── tokenizer

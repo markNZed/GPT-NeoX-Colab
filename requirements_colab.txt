@@ -1,4 +1,5 @@
 dagshub
+mlflow
 hydra-core
 python-dotenv
 dvc[s3]

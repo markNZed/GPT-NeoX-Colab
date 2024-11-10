@@ -5,6 +5,7 @@ import boto3  # type: ignore
 from botocore.config import Config  # type: ignore
 from botocore.exceptions import ClientError  # type: ignore
 from dotenv import load_dotenv
+from pathlib import Path
 try:
     from google.colab import userdata  # type: ignore
 except ImportError:
@@ -201,3 +202,10 @@ def upload_my_env(upload_env=False):
         print("Upload response:", response)
     else:
         print("Skipping upload to BackBlaze because no B2_APP_KEY_RW")
+
+
+def find_project_root(current_path: Path = Path.cwd()) -> Path:
+    for parent in current_path.parents:
+        if (parent / "requirements.txt").exists() or (parent / ".git").exists():
+            return parent
+    return current_path  # Fall back to the current path if not found
