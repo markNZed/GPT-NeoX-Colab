@@ -1,3 +1,4 @@
 all.md
 dummy.txt
 *.egg-info
+/data
