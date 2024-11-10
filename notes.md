@@ -1,7 +1,5 @@
 - Although this is not strictly necessary, we find it useful to define the model parameters in one config file (e.g configs/125M.yml) and the data path parameters in another (e.g configs/local_setup.yml).
 - While so far there has been no systematic work that focuses on prompted pretraining, recent work (Biderman and Raff, 2022) observed that the formulation of the StackExchange component of the Pile appears to heavily influences code generation
-- char_level_ppl for char tokenizer?
-- 1.2GB so could increase batch by at least 10x
 - The deepy.py script assumes it is running in the root of GTP-NeoX repo
 - Maybe we should install gpt-neox as a submodule ?
 - Colab renewal 24th
@@ -34,5 +32,5 @@
   - dvc init
   - dvc remote add -d backblaze s3://GPT-NeoX-Colab/dvc
   - dvc remote modify backblaze endpointurl https://s3.eu-central-003.backblazeb2.com 
-- Setup a basic DagsHub + MLFlow + Hydra experiment
+- Setup a real shakespeare experiment
 

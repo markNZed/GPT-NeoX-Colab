@@ -1,0 +1,27 @@
+
+stages:
+  preprocess:
+    cmd: python preprocess_script.py
+    deps:
+      - data/raw_data.csv
+      - preprocess_script.py
+    outs:
+      - data/processed_data.csv
+
+  train:
+    cmd: python train_script.py
+    deps:
+      - data/processed_data.csv
+      - train_script.py
+    outs:
+      - models/model.pkl
+    params:
+      - training.learning_rate
+
+  evaluate:
+    cmd: python evaluate_script.py
+    deps:
+      - models/model.pkl
+      - evaluate_script.py
+    outs:
+      - reports/metrics.json
