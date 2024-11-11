@@ -203,6 +203,24 @@ def upload_my_env(upload_env=False):
     else:
         print("Skipping upload to BackBlaze because no B2_APP_KEY_RW")
 
+def create_my_env():
+    workspaceDir = "/content"
+    GPTNeoXDir = workspaceDir + "/GPT-NeoX"
+    os.chdir(workspaceDir)
+    # Check if the directory does not exist
+    if not os.path.isdir(f"{workspaceDir}/my_env"):
+        # Install venv package for Python 3.10
+        run("apt-get update && apt-get install -y python3.10-venv")
+        run("pip install virtualenv")
+        # Create the virtual environment
+        run("python3 -m venv {workspaceDir}/my_env")
+        os.chdir(PTNeoXDir)
+        # Install specific versions of torch and other packages to avoid compatibility issues
+        run(f"source {workspaceDir}/my_env/bin/activate && pip install torch==2.3.0 torchaudio==2.3.0 torchvision==0.18.0 transformers==4.41.0 sentence-transformers==2.2.2")
+        # Install dependencies
+        run(f"source {workspaceDir}/my_env/bin/activate && pip install -r ./requirements/requirements.txt")
+        run(f"source {workspaceDir}/my_env/bin/activate && pip install -r ./requirements/requirements-tensorboard.txt")
+
 
 def find_project_root(current_path: Path = Path.cwd()) -> Path:
     for parent in current_path.parents:

@@ -225,3 +225,9 @@ def save_checkpoints_to_drive(source_folder, dest_folder):
     shutil.copytree(source_folder, dest_versioned)
     print(f"Folder copied successfully to Google Drive as '{dest_versioned}'!")
 
+def get_or_create_experiment_id(name):
+    exp = mlflow.get_experiment_by_name(name)
+    if exp is None:
+        exp_id = mlflow.create_experiment(name)
+        return exp_id
+    return exp.experiment_id
