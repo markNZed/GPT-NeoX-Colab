@@ -8,7 +8,7 @@ dagshub:
 
 # Base settings
 output_dir: ../outputs
-experiment_name: "base_experiment"
+experiment_name: "TBD"
 seed: 42
 
 # General model settings

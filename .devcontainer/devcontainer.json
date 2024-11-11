@@ -17,12 +17,7 @@
             },
             "extensions": [
                 "ms-python.python",
-                "ms-python.vscode-pylance",
                 "ms-toolsai.jupyter",
-                "ms-python.black-formatter",
-                "ms-python.flake8",
-                "ms-python.isort",
-                "ms-python.mypy-type-checker",
                 "codeium.codeium",
                 "mhutchie.git-graph"
             ]
