@@ -9,3 +9,5 @@
   - Can TPU v2-8 demonstrate multi-GPU setups in Colab?
   - Run experiment in parallel
     - Separate processes in Colab, different dirs for results etc
+  - Reduce startup time in colab for experiments
+  - A colab compatible version of pgt-neox would be great
