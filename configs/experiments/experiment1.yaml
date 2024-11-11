@@ -1,3 +1,7 @@
 train_micro_batch_size_per_gpu: 4
 train_iters: 51200
 lr_decay_iters: 51200
+save: "experiments/experiment1/checkpoints"
+load: "experiments/experiment1/checkpoints"
+tensorboard_dir: "experiments/experiment1/tensorboard"
+log_dir: "experiments/experiment1/logs"
