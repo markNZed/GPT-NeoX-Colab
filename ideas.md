@@ -1,8 +1,11 @@
 - Can we support distributed consumer grade GPUs ?
   - https://github.com/EleutherAI/gpt-neox?tab=readme-ov-file#advanced-custom-launching
+  - https://app.primeintellect.ai/intelligence could allow for distributed training
 - Custom data loading
   - shttps://github.com/EleutherAI/gpt-neox?tab=readme-ov-file#using-custom-data
-- Can use TPU v2-8 to experiment with multi-GPU setups in Colab?
-- https://app.primeintellect.ai/intelligence could allow for distributed training
-- https://dagshub.com MLFlow
 - Should we be using GPTNeoXTokenizerFast ?
+- Possible next UpWork task
+  - Review of experiment setup
+  - Can TPU v2-8 demonstrate multi-GPU setups in Colab?
+  - Run experiment in parallel
+    - Separate processes in Colab, different dirs for results etc
