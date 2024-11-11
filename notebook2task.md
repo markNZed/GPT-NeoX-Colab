@@ -4,7 +4,7 @@
 
 **Objective:**
 
-Develop a comprehensive Colab notebook that sets up a GPT-NeoX environment for training a Python code completion model from scratch. The notebook should be designed for experimentation with different training algorithms and model architectures, suitable for running on a T4 GPU (such as those available on Google Colab). Additionally, the project emphasizes collaboration via GitHub and experiment tracking using Weights & Biases (W&B).
+Develop a comprehensive Colab notebook that sets up a GPT-NeoX environment for training a Python code completion model from scratch. The notebook should be designed for experimentation with different training algorithms and model architectures, suitable for running on a T4 GPU (such as those available on Google Colab). Additionally, the project emphasizes collaboration via GitHub and experiment tracking using MLFlow.
 
 ---
 
@@ -26,9 +26,9 @@ Develop a comprehensive Colab notebook that sets up a GPT-NeoX environment for t
    - Use GitHub as the central repository for code sharing and version control.
    - Organize the repository for clarity and ease of collaboration.
 
-5. **Experiment Tracking with Weights & Biases (W&B):**
-   - Integrate W&B for logging, tracking experiments, and visualizing results.
-   - Facilitate collaboration by sharing W&B dashboards and reports.
+5. **Experiment Tracking with MLFlow:**
+   - Integrate MLFlow for logging, tracking experiments, and visualizing results.
+   - Facilitate collaboration by sharing MLFlow dashboards and reports.
 
 ---
 
@@ -65,34 +65,15 @@ The notebook should be structured to guide users through the entire process, wit
 - **Explanation of Configuration Choices:**
   - Provide rationale for the chosen hyperparameters.
 
-#### **5. Training Loop with W&B Integration:**
+#### **5. Training Loop with MLFlow Integration:**
 
-- **Set Up Weights & Biases:**
-  - Include instructions to install W&B and initialize it in the notebook.
-
-  ```bash
-  !pip install wandb
-  ```
-
-  ```python
-  import wandb
-  wandb.login()
-  ```
-
-- **Configure W&B for Experiment Tracking:**
-  - Integrate W&B into the training script to log metrics, hyperparameters, and artifacts.
+- **Configure MLFlow for Experiment Tracking:**
+  - Integrate MLFlow into the training script to log metrics, hyperparameters, and artifacts.
 
 - **Implement the Training Loop:**
-  - Use GPT-NeoX's training scripts with modifications to include W&B logging.
+  - Use GPT-NeoX's training scripts with modifications to include MLFlow logging.
   - Ensure the training loop captures necessary metrics for analysis.
 
-  ```python
-  # Example command to start training with W&B
-  !python deepy.py train.py \
-      --conf_dir=configs \
-      --conf_file=code_completion.yaml \
-      --wandb_project='gpt-neox-code-completion'
-  ```
 
 #### **6. Experimentation with Training Algorithms:**
 
@@ -101,7 +82,7 @@ The notebook should be structured to guide users through the entire process, wit
 
 - **Instructions for Running Different Experiments:**
   - Explain how to modify configuration files or command-line arguments to test different setups.
-  - Encourage users to document their experiments using W&B.
+  - Encourage users to document their experiments using MLFlow.
 
 #### **7. Evaluation and Benchmarking:**
 
@@ -110,10 +91,10 @@ The notebook should be structured to guide users through the entire process, wit
 
 - **Implement Evaluation Scripts:**
   - Include code to evaluate the model on a public benchmark
-  - Log evaluation metrics to W&B for comparison.
+  - Log evaluation metrics to MLFlow for comparison.
 
 - **Visualization of Results:**
-  - Show how to visualize training progress and evaluation results using W&B dashboards.
+  - Show how to visualize training progress and evaluation results using MLFlow dashboards.
 
 #### **8. Collaborative Features:**
 
@@ -122,8 +103,8 @@ The notebook should be structured to guide users through the entire process, wit
   - Include a `README.md` file with instructions on setting up the environment and running experiments.
   - Use Git branches or pull requests for collaborative code reviews.
 
-- **W&B Collaboration:**
-  - Utilize W&B's team features to share experiment results and dashboards.
+- **MLFlow Collaboration:**
+  - Utilize MLFlow's team features to share experiment results and dashboards.
 
 ---
 
@@ -155,17 +136,17 @@ The notebook should be structured to guide users through the entire process, wit
   - Utilize GitHub Issues to track bugs, feature requests, and tasks.
   - Use GitHub Discussions or Pull Request comments for team communication.
 
-### **Weights & Biases (W&B) Integration:**
+### **MLFlow Integration:**
 
 - **Project Setup:**
-  - Create a W&B project dedicated to this code completion model.
+  - Create a MLFlow project dedicated to this code completion model.
 
 - **Team Collaboration:**
-  - Invite team members to the W&B project for shared access to experiment logs and dashboards.
+  - Invite team members to the MLFlow project for shared access to experiment logs and dashboards.
 
 - **Experiment Tracking:**
   - Log hyperparameters, training metrics, model checkpoints, and evaluation results.
-  - Use W&B's comparison features to analyze different training runs.
+  - Use MLFlow's comparison features to analyze different training runs.
 
 ---
 
@@ -182,7 +163,7 @@ The notebook should be structured to guide users through the entire process, wit
 
 - **Collaboration:**
   - Use GitHub for all code-related activities.
-  - Set up the W&B project and ensure proper logging throughout the training process.
+  - Set up the MLFlow project and ensure proper logging throughout the training process.
 
 - **Communication:**
   - Provide regular updates on progress.
@@ -208,6 +189,6 @@ The notebook should be structured to guide users through the entire process, wit
 
 **Conclusion:**
 
-The goal is to create a collaborative and experimental environment where team members can explore different training algorithms for GPT-NeoX models focused on Python code completion. By leveraging GitHub for code sharing and W&B for experiment tracking, the project aims to foster a collaborative learning experience. The notebook should serve as both a practical tool for experimentation and an educational resource for the team.
+The goal is to create a collaborative and experimental environment where team members can explore different training algorithms for GPT-NeoX models focused on Python code completion. By leveraging GitHub for code sharing and MLFlow for experiment tracking, the project aims to foster a collaborative learning experience. The notebook should serve as both a practical tool for experimentation and an educational resource for the team.
 
 ---

@@ -15,7 +15,7 @@ This repository provides a collection of example Google Colab notebooks that gui
 - **Lightweight Model Configurations** – Optimized settings for fast training on single GPUs.
 - **Custom Data Handling** – Instructions on loading, preprocessing, and tokenizing custom datasets.
 - **Hyperparameter Experimentation** – Modular code to quickly adjust configurations and observe results.
-- **Experiment Tracking with Weights & Biases (W&B)** – Track model metrics, hyperparameters, and checkpoints.
+- **Experiment Tracking with DagsHub** – Track model metrics, hyperparameters, and checkpoints.
 - **Collaboration-Ready** – GitHub-based code sharing with clear structure and collaborative tools.
 
 ## Available Notebooks
@@ -28,7 +28,7 @@ This repository provides a collection of example Google Colab notebooks that gui
 
 - Setup and configuration guidance for small, Colab-friendly models.
 - Step-by-step instructions on data loading, tokenization, and model training.
-- Integrated experiment tracking with W&B to log metrics and visualize model performance.
+- Integrated experiment tracking with DagsHub to log metrics and visualize model performance.
 
 [**Open in Colab ➔**](notebooks/shakespeare_training.ipynb)
 
@@ -40,7 +40,7 @@ This repository provides a collection of example Google Colab notebooks that gui
 
 - Includes dataset recommendations and preprocessing steps specific to Python code.
 - Detailed sections on customizing training algorithms and hyper-parameters.
-- Integrated W&B tracking to facilitate comparison of different model configurations.
+- Integrated DagsHub tracking to facilitate comparison of different model configurations.
 - Evaluation on a public benchmark
 
 [**Open in Colab ➔**](notebooks/code_completion_training.ipynb)
@@ -51,7 +51,7 @@ This repository provides a collection of example Google Colab notebooks that gui
 
 - **Google Colab** – A free Google account with access to Colab GPUs.
 - **GitHub Account** – For code sharing and collaboration.
-- **Weights & Biases (W&B) Account** – For experiment tracking.
+- **DagsHub Account** – For experiment tracking.
 
 ### Setup and Execution
 
@@ -92,9 +92,9 @@ GPT-NeoX-Colab/
 - **Clear Commit Messages:** Make changes with clear, descriptive messages to facilitate collaboration.
 - **Repository Organization:** The repository is structured to keep configurations, scripts, and data handling in separate folders for clarity.
 
-### 2. Weights & Biases (W&B) for Experiment Tracking
+### 2. DagsHub for Experiment Tracking
 
-- **Project Creation:** Log into W&B and create a project to track experiments.
+- **Project Creation:** Log into DagsHub and create a project to track experiments.
 - **Automated Logging:** The notebooks are configured to log hyperparameters, metrics, and artifacts in real-time.
 - **Comparisons:** Easily compare different model runs, configurations, and metrics.
 
