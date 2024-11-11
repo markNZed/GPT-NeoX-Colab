@@ -1,5 +1,3 @@
-# Hydra configuration 
-experiment_name: "experiment2"
 train_micro_batch_size_per_gpu: 86
 train_iters: 3200
 lr_decay_iters: 3200
