@@ -23,7 +23,8 @@
                 "ms-python.flake8",
                 "ms-python.isort",
                 "ms-python.mypy-type-checker",
-                "codeium.codeium"
+                "codeium.codeium",
+                "mhutchie.git-graph"
             ]
         }
     },

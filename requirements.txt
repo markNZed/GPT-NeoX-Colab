@@ -13,4 +13,4 @@ boto3
 torch
 pickleshare
 dvc[s3]
-
+jupyterlab
