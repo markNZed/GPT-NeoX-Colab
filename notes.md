@@ -33,4 +33,7 @@
   - dvc remote add -d backblaze s3://GPT-NeoX-Colab/dvc
   - dvc remote modify backblaze endpointurl https://s3.eu-central-003.backblazeb2.com 
 - Setup a real shakespeare experiment
+  - save the loss
+  - perplexity as metric ?
+- Save checkpoin tof code completion to BB
 
