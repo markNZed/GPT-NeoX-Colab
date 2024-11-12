@@ -1,5 +1,5 @@
 {
-  "pipe_parallel_size": 0, # Because running on one GPU
+  "pipe_parallel_size": 1, # Because running on one GPU
   "model_parallel_size": 1, # Because running on one GPU
 
   # model settings
@@ -90,7 +90,7 @@
   "deepspeed_extra_args": {
     "comms_logger": {
       "enabled": true,
-      "verbose": true,
+      "verbose": false,
       "prof_all": true,
       "debug": false
     }

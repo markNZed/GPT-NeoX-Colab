@@ -32,6 +32,14 @@
   - dvc init
   - dvc remote add -d backblaze s3://GPT-NeoX-Colab/dvc
   - dvc remote modify backblaze endpointurl https://s3.eu-central-003.backblazeb2.com 
+  - # Adding
+  - dvc add models
+  - git add models.dvc
+  - git commit -m"adding models"
+  - git push
+  - export AWS_ACCESS_KEY_ID=...
+  - export AWS_SECRET_ACCESS_KEY=...
+  - dvc push
 - Setup a real shakespeare experiment
   - save the loss
   - perplexity as metric ?
