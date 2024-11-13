@@ -11,3 +11,5 @@
     - Separate processes in Colab, different dirs for results etc
   - Reduce startup time in colab for experiments
   - A colab compatible version of pgt-neox would be great
+  - Free TPU for research https://sites.research.google/trc/about/
+   - Get running on TPU and benchmark

@@ -3,3 +3,6 @@ mlflow[extras]
 hydra-core
 python-dotenv
 dvc[s3]
+GitPython
+ipynbname
+
