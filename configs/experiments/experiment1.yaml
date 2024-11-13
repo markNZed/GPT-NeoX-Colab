@@ -7,3 +7,4 @@ save: "experiments/experiment1/checkpoints"
 load: "experiments/experiment1/checkpoints"
 tensorboard_dir: "experiments/experiment1/tensorboard"
 log_dir: "experiments/experiment1/logs"
+eval_interval: 5000
