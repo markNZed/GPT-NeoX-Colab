@@ -1,5 +1,5 @@
 {
-  "pipe_parallel_size": 1, # Because running on one GPU
+  "pipe_parallel_size": 0, # Because running on one GPU
   "model_parallel_size": 1, # Because running on one GPU
 
   # model settings

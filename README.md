@@ -1,6 +1,6 @@
 # GPT-NeoX-Colab
 
-> **An accessible set of Google Colab notebooks for training and experimenting with GPT-NeoX models on limited resources.**
+> **An accessible set of Google Colab notebooks for training and experimenting with GPT-NeoX SLM models on limited resources.**
 
 ## Status
 

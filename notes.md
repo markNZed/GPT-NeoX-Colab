@@ -43,5 +43,7 @@
 - Setup a real shakespeare experiment
   - save the loss
   - perplexity as metric ?
-- Save checkpoin tof code completion to BB
+- Save checkpoint of code completion to BB
+- Add system logging to experiment
+  - Benchmark pipe_parallel_size 0 and 1
 
