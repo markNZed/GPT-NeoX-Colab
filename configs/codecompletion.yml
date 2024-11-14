@@ -50,7 +50,7 @@
     "contiguous_gradients": True,
   },
 
-  "train_micro_batch_size_per_gpu": 4, #32,
+  "train_micro_batch_size_per_gpu": 8, #32,
   "gradient_accumulation_steps": 1,
   "data_impl": "mmap",
   "num_workers": 1,
@@ -94,7 +94,7 @@
   # additional deepspeed args not specified above
   "deepspeed_extra_args": {
     "comms_logger": {
-        "enabled": true,
+        "enabled": false,
         "verbose": false,
         "prof_all": true,
         "debug": false
