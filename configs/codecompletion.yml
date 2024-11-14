@@ -83,18 +83,18 @@
   "distributed_backend": "nccl",
   "lr_decay_style": "cosine",
   "warmup": 0.01,
-  "checkpoint_factor": 50,
-  "eval_interval": 40,
-  "eval_iters": 2,
+  "checkpoint_factor": 1000,
+  "eval_interval": 200,
+  "eval_iters": 10,
 
-  "log_interval": 10,
-  "steps_per_print": 10,
+  "log_interval": 100,
+  "steps_per_print": 100,
   "wall_clock_breakdown": true,
 
   # additional deepspeed args not specified above
   "deepspeed_extra_args": {
     "comms_logger": {
-        "enabled": true,
+        "enabled": false,
         "verbose": false,
         "prof_all": true,
         "debug": false
