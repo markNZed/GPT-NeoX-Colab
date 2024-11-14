@@ -75,7 +75,7 @@
   "distributed_backend": "nccl",
   "lr_decay_style": "linear",
   "warmup": 0.01,
-  "checkpoint_factor": 50, # Must b defined if save is set
+  "checkpoint_factor": 50, # Must be defined if save is set
   "eval_interval": 30,
   "eval_iters": 2,
 

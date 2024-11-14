@@ -16,7 +16,7 @@
   "seq_length": 2048,
   "max_position_embeddings": 2048,
   "pos_emb": "rotary",
-  "no_weight_tying": true,
+  "no_weight_tying": false, # Sharing embedding and output weights
   "gpt_j_residual": false,
   "output_layer_parallelism": "column",
 
@@ -56,7 +56,7 @@
   "num_workers": 1,
 
   # activation checkpointing
-  "checkpoint_activations": true,
+  "checkpoint_activations": false, # We are not memory bound
   "checkpoint_num_layers": 1,
   "partition_activations": true,
   "synchronize_each_layer": true,
@@ -83,9 +83,9 @@
   "distributed_backend": "nccl",
   "lr_decay_style": "cosine",
   "warmup": 0.01,
-  "checkpoint_factor": 1000,
+  "checkpoint_factor": 50,
   "eval_interval": 40,
-  "eval_iters": 10,
+  "eval_iters": 2,
 
   "log_interval": 10,
   "steps_per_print": 10,
@@ -95,7 +95,7 @@
   "deepspeed_extra_args": {
     "comms_logger": {
         "enabled": true,
-        "verbose": true,
+        "verbose": false,
         "prof_all": true,
         "debug": false
     },
