@@ -44,6 +44,5 @@
   - save the loss
   - perplexity as metric ?
 - Save checkpoint of code completion to BB
-- Add system logging to experiment
-  - Benchmark pipe_parallel_size 0 and 1
+  - Create a benchmark notebook that starts with the HF model
 
