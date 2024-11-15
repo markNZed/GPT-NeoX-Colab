@@ -13,3 +13,5 @@
   - A colab compatible version of pgt-neox would be great
   - Free TPU for research https://sites.research.google/trc/about/
    - Get running on TPU and benchmark
+  - Shakespeare HF model should also save the tokenizer
+    - Unclear how to do that because not using a HF teokenizer - maybe we can ?
