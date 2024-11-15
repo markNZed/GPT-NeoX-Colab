@@ -5,4 +5,5 @@ python-dotenv
 dvc[s3]
 GitPython
 ipynbname
-
+tiktoken
+blobfile
