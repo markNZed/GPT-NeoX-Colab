@@ -14,3 +14,4 @@ torch
 pickleshare
 dvc[s3]
 jupyterlab
+humanize

@@ -19,8 +19,10 @@ def main():
     assert len(preds) == len(gts), f"Samples of predictions and answers are not equal, {len(preds)}: {len(gts)}"
 
     total = 0
-    correct = 0.0
+    correct = 0
+    i = 0
     for pred, gt in zip(preds, gts):
+        i += 1
         pred = pred.split()
         gt = gt.split()
         assert len(pred) == len(gt), f"Sequence length of prediction and answer are not equal, {len(pred)}: {len(gt)}"
@@ -29,8 +31,16 @@ def main():
                 total += 1
                 if x == y:
                     correct += 1
-    
-    logger.info(f"Total {total} tokens, accuracy: {round(correct/total*100, 2)}")
+                    #logger.info(f"Match at {correct}/{total}: pred='{x}' gt='{y}'")
+                else:
+                    #logger.info(f"Mismatch at {correct}/{total}: pred='{x}' gt='{y}'")
+                    pass
+
+    if correct > 0:
+        acc = round((1.0*correct)/total*100, 2)
+    else:
+        acc = 0
+    logger.info(f"Total {total} tokens, accuracy: {acc}")
 
 if __name__ == "__main__":
     main()
