@@ -17,9 +17,11 @@ RUN apt-get update && apt-get install -y \
     screen 
     
 # Install Python dependencies
+COPY requirements.txt /tmp/requirements_colab.txt
 COPY requirements.txt /tmp/requirements.txt
 RUN pip install --upgrade pip && \
-    pip install -r /tmp/requirements.txt
+    pip install -r /tmp/requirements_colab.txt \
+    pip install -r /tmp/requirements.txt \
 
 RUN pip install \
     jupyterlab \

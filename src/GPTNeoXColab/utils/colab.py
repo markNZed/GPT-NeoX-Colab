@@ -52,14 +52,14 @@ def setup_ssh_connection(ssh_connect=False):
             print("Setting up SSH connection...")
 
             # Install OpenSSH server and set root password
-            os.system("apt-get install -y openssh-server")
+            os.system("sudo apt-get install -y openssh-server")
             os.makedirs("/var/run/sshd", exist_ok=True)
             os.system("echo 'root:root' | chpasswd")  # Set root password to 'root'
             os.system("echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config")
             os.system("service ssh restart")
 
             # Optional: install screen for background sessions
-            os.system("apt-get install -y screen")
+            os.system("sudo apt-get install -y screen")
 
             # Prompt for SSH password and initiate SSH tunneling
             password = getpass.getpass("Enter your SSH password: ")
@@ -174,12 +174,13 @@ def download_my_env(upload_env=False):
     if (upload_env):
         return
     b2_r = get_b2_resource(os.getenv("BB_ENDPOINT"), os.getenv("AWS_ACCESS_KEY_ID"), os.getenv("AWS_SECRET_ACCESS_KEY"))
-    if not os.path.exists("/content/my_env.tar"):
+    if not os.path.exists("/content/my_env"):
         # Downloading takes about 40sec
-        print("Downloading my_env.tar.gz")
-        download_file(os.getenv("BB_BUCKET"), "/content", "my_env.tar.gz", "my_env.tar.gz", b2_r)
+        if not os.path.exists("/content/my_env.tar.gz"):
+            print("Downloading my_env.tar.gz")
+            download_file(os.getenv("BB_BUCKET"), "/content", "my_env.tar.gz", "my_env.tar.gz", b2_r)
         print("Unzipping my_env.tar.gz")
-        run("apt-get install -y pigz pv")
+        run("sudo apt-get install -y pigz pv")
         run("pigz -d -p 4 /content/my_env.tar.gz")  # Decompress using 4 cores (adjust as needed)
         print("Untarring my_env.tar.gz")
         run("pv /content/my_env.tar | tar -xf - -C /content")
@@ -194,7 +195,7 @@ def upload_my_env(upload_env=False):
     os.chdir("/content")
     # Compress the tar archive with pigz, showing a progress indicator
     # Compresses 5.5G to 3.1G
-    run("apt-get install -y pigz pv")
+    run("sudo apt-get install -y pigz pv")
     run("time tar cf - my_env | pv -p -e -r -b | pigz -p 4 -1 > my_env.tar.gz")
     # Upload to BackBlaze
     if userdata.get("B2_APP_KEY_RW"):
@@ -210,7 +211,7 @@ def create_my_env():
     # Check if the directory does not exist
     if not os.path.isdir(f"{workspaceDir}/my_env"):
         # Install venv package for Python 3.10
-        run("apt-get update && apt-get install -y python3.10-venv")
+        run("sudo apt-get update && sudo apt-get install -y python3.10-venv")
         run("pip install virtualenv")
         # Create the virtual environment
         run("python3 -m venv {workspaceDir}/my_env")
