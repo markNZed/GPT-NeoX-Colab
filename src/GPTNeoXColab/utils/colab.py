@@ -182,7 +182,7 @@ def download_my_env(upload_env=False):
         print("Unzipping my_env.tar.gz")
         run("sudo apt-get install -y pigz pv")
         run("pigz -d -p 4 /content/my_env.tar.gz")  # Decompress using 4 cores (adjust as needed)
-        print("Untarring my_env.tar.gz")
+        print("Untarring my_env.tar")
         run("pv /content/my_env.tar | tar -xf - -C /content")
 
 
