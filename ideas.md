@@ -15,3 +15,5 @@
    - Get running on TPU and benchmark
   - Shakespeare HF model should also save the tokenizer
     - Unclear how to do that because not using a HF teokenizer - maybe we can ?
+- Get training running with CPU (for offline dev)
+  - move from vvirtual env to pdm

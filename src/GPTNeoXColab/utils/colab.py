@@ -170,8 +170,8 @@ def download_file(bucket, directory, file, key_name, b2):
         traceback.print_exc()  # Print the full stack trace
 
 
-def download_my_env(upload_env=False):
-    if (upload_env):
+def download_my_env(download_env=False):
+    if (not download_env):
         return
     b2_r = get_b2_resource(os.getenv("BB_ENDPOINT"), os.getenv("AWS_ACCESS_KEY_ID"), os.getenv("AWS_SECRET_ACCESS_KEY"))
     if not os.path.exists("/content/my_env"):
