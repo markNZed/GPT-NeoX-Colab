@@ -24,6 +24,9 @@
         }
     },
     "postCreateCommand": "bash scripts/postCreateCommand.sh",
-    "remoteUser": "vscode"
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=${env:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind"
+    ]
 }
   
