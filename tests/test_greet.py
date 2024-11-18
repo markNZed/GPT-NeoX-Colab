@@ -1,6 +1,6 @@
 # Import the function from the installed module
-from GPTNeoXColab import greet
-from GPTNeoXColab import utils
+from gpt_neox_colab import greet
+from gpt_neox_colab import utils
 
 
 # Use the function

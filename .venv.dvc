@@ -1,0 +1,6 @@
+outs:
+- md5: 115a8f2f4ddba2cb58c38b89c7e28305.dir
+  size: 6032153986
+  nfiles: 41438
+  hash: md5
+  path: .venv

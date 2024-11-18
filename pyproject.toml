@@ -1,32 +1,32 @@
-[project]
-name = "gtpneoxcolab"
+[tool.poetry]
+name = "gtp_neox_colab"
 version = "0.1.0"
-description = "Default template for PDM package"
-authors = [
-    {name = "Your Name", email = "your_email@example.com"},
-]
-dependencies = [
-    "torch==2.3.0",
-    "torchaudio==2.3.0",
-    "torchvision==0.18.0",
-    "transformers==4.38.0",
-    "sentence-transformers==2.2.2",
-    "tiktoken",
-    "blobfile",
-    "dagshub",
-    "hydra-core",
-    "python-dotenv",
-    "tensorboard",
-    "boto3",
-    "dvc[s3]",
-    "mlflow",
-    "humanize",
-    "GPTNeoXColab @ file:///${PROJECT_ROOT}/"
-]
-requires-python = ">=3.10"
+description = "Default template for Poetry package"
+authors = ["Mark Hampton <mark.hampton@ieee.org>"]
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
+packages = [
+    { include = "gpt_neox_colab", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+torch = "2.3.0"
+torchaudio = "2.3.0"
+torchvision = "0.18.0"
+transformers = "4.38.0"
+sentence-transformers = "2.2.2"
+tiktoken = "*"
+blobfile = "*"
+dagshub = "*"
+hydra-core = "*"
+python-dotenv = "*"
+tensorboard = "*"
+boto3 = "*"
+dvc = {extras = ["s3"], version = "^3.56.0"}
+mlflow = "*"
+humanize = "*"
 
 [build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

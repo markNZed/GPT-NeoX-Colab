@@ -6,3 +6,4 @@ models/
 out/
 build/
 .cache
+.venv

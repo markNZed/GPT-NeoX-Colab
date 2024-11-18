@@ -5,7 +5,7 @@ from setuptools import setup, find_packages  # type: ignore[import]
 #    required = f.read().splitlines()
 
 setup(
-    name="GPTNeoXColab",
+    name="gpt_neox_colab",
     version="0.1",
     package_dir={"": "src"},
     packages=find_packages(where="src")

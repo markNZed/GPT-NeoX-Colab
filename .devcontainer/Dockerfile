@@ -34,9 +34,8 @@ RUN groupadd --gid $USER_GID $USERNAME && \
 RUN mkdir -p /content /workspace && \
     chown -R $USERNAME:$USERNAME /content /workspace
 
-# Install PDM as root
-
-RUN pip install --upgrade pip &&pip install pdm
+# Install Poetry as root
+RUN pip install --upgrade pip && pip install poetry
 
 # Switch to non-root user
 USER $USERNAME
@@ -45,10 +44,12 @@ WORKDIR /workspace
 # Set up environment for the user
 ENV PATH="/home/$USERNAME/.local/bin:$PATH"
 
-# Copy dependency files
-COPY --chown=$USERNAME:$USERNAME README.md pyproject.toml pdm.lock /workspace/
+# Install dependencies using Poetry
+COPY --chown=$USERNAME:$USERNAME README.md pyproject.toml poetry.lock /workspace/
 
-# Mount cache as a non-root user
+# Copy the source code
+COPY --chown=$USERNAME:$USERNAME src/ /workspace/src/
+
 RUN --mount=type=cache,target=/workspace/.cache,uid=$USER_UID,gid=$USER_GID \
-    pdm config cache_dir /workspace/.cache && \
-    pdm --non-interactive install --verbose
+    poetry config virtualenvs.in-project true && \
+    poetry install --no-interaction --verbose

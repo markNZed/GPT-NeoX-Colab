@@ -1,5 +1,6 @@
 [core]
     remote = backblaze
+    analytics = false
 ['remote "backblaze"']
     url = s3://GPT-NeoX-Colab/dvc
     endpointurl = https://s3.eu-central-003.backblazeb2.com
