@@ -26,6 +26,7 @@ boto3 = "*"
 dvc = {extras = ["s3"], version = "^3.56.0"}
 mlflow = "*"
 humanize = "*"
+ipykernel = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
