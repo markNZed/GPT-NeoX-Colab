@@ -1,0 +1,6 @@
+outs:
+- md5: ca4648aad25816d1c52cdf94977aea3a
+  size: 3090263282
+  hash: md5
+  path: my_env.tar.gz
+  
