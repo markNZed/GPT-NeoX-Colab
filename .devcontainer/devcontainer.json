@@ -2,12 +2,11 @@
     "name": "Python ML Dev Container",
     "workspaceFolder": "/workspace",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-    "dockerFile": "Dockerfile",
-    "runArgs": ["--shm-size=2g", "--env-file=${localWorkspaceFolder}/.env"],
-    "context": "..",
+    "runArgs": ["--gpus", "all", "--shm-size=2g", "--env-file=${localWorkspaceFolder}/.env"],
     "customizations": {
         "vscode": {
             "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
                 "python.pythonPath": "/usr/local/bin/python",
                 "python.formatting.provider": "black",
                 "python.linting.enabled": true,
@@ -24,9 +23,13 @@
         }
     },
     "postCreateCommand": "bash scripts/postCreateCommand.sh",
-    "remoteUser": "vscode",
+    "remoteUser": "ubuntu",
     "mounts": [
         "source=${env:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind"
-    ]
+    ],
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    }
 }
   
