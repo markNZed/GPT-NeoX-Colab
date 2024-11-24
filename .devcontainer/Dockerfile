@@ -53,6 +53,9 @@ COPY --chown=$USERNAME:$USERNAME src/ /workspace/src/
 #    poetry config virtualenvs.in-project true && \
 #    poetry install --no-interaction --verbose
 
+RUN poetry config virtualenvs.in-project true && \
+    poetry install --no-interaction --verbose
+
 
 # Default command
 CMD ["bash"]

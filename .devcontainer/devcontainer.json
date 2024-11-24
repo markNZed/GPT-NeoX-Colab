@@ -25,7 +25,7 @@
     "postCreateCommand": "bash scripts/postCreateCommand.sh",
     "remoteUser": "ubuntu",
     "mounts": [
-        "source=${env:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind"
+        "source=${env:HOME}/.gitconfig,target=/home/ubuntu/.gitconfig,type=bind"
     ],
     "build": {
         "dockerfile": "Dockerfile",

@@ -3,4 +3,4 @@ poetry install
 #pip install -e .
 #git config --global user.email "you@example.com"
 #git config --global user.name "Your Name"
-python3 scripts/postCreateCommand.py
+.venv/bin/python3 scripts/postCreateCommand.py
