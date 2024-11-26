@@ -1,4 +1,5 @@
-# Use an NVIDIA CUDA base image with Ubuntu 24.04 for GPU support
+# Use an NVIDIA CUDA base image with Ubuntu 22.04 for GPU support
+# Using 22.04 so we have Pytohn 3.10 (24.04 has 3.12)
 FROM nvidia/cuda:12.6.2-base-ubuntu22.04
 
 # Set environment variables
@@ -58,6 +59,6 @@ COPY --chown=$USERNAME:$USERNAME src/ /workspace/src/
 RUN poetry config virtualenvs.in-project true && \
     poetry install --no-interaction --verbose
 
-# Default command
-CMD ["bash"]
-    
+ENV SHELL=/bin/bash
+
+CMD ["/bin/bash"]

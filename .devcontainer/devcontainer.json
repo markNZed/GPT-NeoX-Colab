@@ -2,7 +2,10 @@
     "name": "Python ML Dev Container",
     "workspaceFolder": "/workspace",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-    "runArgs": ["--gpus", "all", "--shm-size=2g", "--env-file=${localWorkspaceFolder}/.env"],
+    "runArgs": [
+        "--shm-size=2g",
+        "--env-file=${localWorkspaceFolder}/.env"
+    ],
     "customizations": {
         "vscode": {
             "settings": {
@@ -32,4 +35,3 @@
         "context": ".."
     }
 }
-  

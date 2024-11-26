@@ -1,0 +1,1 @@
+To use the GPU in the devcontainer Docker on the host must be configured for GPU sharing and add "--gpus", "all" to runArgs in devcontainer.json
