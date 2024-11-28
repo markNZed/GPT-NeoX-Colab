@@ -29,8 +29,6 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cuda-archive-keyring.gpg] https://d
 RUN apt-get update
 RUN apt-get -y install cuda-toolkit-12-6
 
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-
 ## Create a non-root user
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -53,13 +51,13 @@ WORKDIR /workspace
 # Set up environment for the user
 ENV PATH="/home/$USERNAME/.local/bin:$PATH"
 
-RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
-COPY --chown=$USERNAME:$USERNAME README.md pyproject.toml poetry.lock /workspace/
-COPY --chown=$USERNAME:$USERNAME src/ /workspace/src/
+COPY --chown=$USERNAME:$USERNAME README.md pyproject.toml src .cache /workspace/
+COPY --chown=$USERNAME:$USERNAME .cache /cache
 
-RUN poetry config virtualenvs.in-project true && \
-    poetry install --no-interaction --verbose
+# We can copy /cache to /workspace/.cache to speed future builds
+RUN uv sync --cache-dir /cache
 
 ENV SHELL=/bin/bash
 
