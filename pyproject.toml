@@ -17,11 +17,11 @@ dependencies = [
     "python-dotenv",
     "tensorboard",
     "boto3",
-    "dvc[s3]<4.0.0,>=3.56.0",
+    "dvc[s3]>=3.56.0,<4.0.0",
     "mlflow",
     "humanize",
     "ipykernel",
-    "tensorflow==2.17.1",
+    "tensorflow==2.17.0",
     "pip<25.0.0,>=24.3.1",
 ]
 name = "gtp_neox_colab"
