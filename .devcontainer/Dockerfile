@@ -29,6 +29,8 @@ RUN echo "deb [signed-by=/usr/share/keyrings/cuda-archive-keyring.gpg] https://d
 RUN apt-get update
 RUN apt-get -y install cuda-toolkit-12-6
 
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
 ## Create a non-root user
 ARG USERNAME=vscode
 ARG USER_UID=1000

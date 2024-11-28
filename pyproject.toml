@@ -1,35 +1,30 @@
-[tool.poetry]
+[project]
+authors = [
+    {name = "Mark Hampton", email = "mark.hampton@ieee.org"},
+]
+license = {text = "MIT"}
+requires-python = ">=3.10"
+dependencies = [
+    "torch==2.3.0",
+    "torchaudio==2.3.0",
+    "torchvision==0.18.0",
+    "transformers==4.38.0",
+    "sentence-transformers==2.2.2",
+    "tiktoken",
+    "blobfile",
+    "dagshub",
+    "hydra-core",
+    "python-dotenv",
+    "tensorboard",
+    "boto3",
+    "dvc[s3]<4.0.0,>=3.56.0",
+    "mlflow",
+    "humanize",
+    "ipykernel",
+    "tensorflow==2.17.1",
+    "pip<25.0.0,>=24.3.1",
+]
 name = "gtp_neox_colab"
 version = "0.1.0"
 description = "Default template for Poetry package"
-authors = ["Mark Hampton <mark.hampton@ieee.org>"]
 readme = "README.md"
-license = "MIT"
-packages = [
-    { include = "gpt_neox_colab", from = "src" }
-]
-
-[tool.poetry.dependencies]
-python = ">=3.10"
-torch = "2.3.0"
-torchaudio = "2.3.0"
-torchvision = "0.18.0"
-transformers = "4.38.0"
-sentence-transformers = "2.2.2"
-tiktoken = "*"
-blobfile = "*"
-dagshub = "*"
-hydra-core = "*"
-python-dotenv = "*"
-tensorboard = "*"
-boto3 = "*"
-dvc = {extras = ["s3"], version = "^3.56.0"}
-mlflow = "*"
-humanize = "*"
-ipykernel = "*"
-tensorflow = "*"
-pip = "^24.3.1"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
