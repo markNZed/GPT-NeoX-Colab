@@ -6,8 +6,11 @@ models/
 out/
 build/
 .cache
-.venv*
+.venv
+.venv.tar
+.venv.tar.gz
 gpt-neox
 my_env
 my_env.tar.gz
 private.md
+/data
