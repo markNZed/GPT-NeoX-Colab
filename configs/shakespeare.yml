@@ -42,7 +42,7 @@
     "contiguous_gradients": true
   },
 
-  "train_micro_batch_size_per_gpu": 256, # 8, #8 for 4GB #256 for 16GB
+  "train_micro_batch_size_per_gpu": 8, #256, # 8, #8 for 4GB #256 for 16GB
   "gradient_accumulation_steps": 1,
   "data_impl": "mmap",
   "num_workers": 1,

@@ -4,7 +4,8 @@
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
     "runArgs": [
         "--shm-size=2g",
-        "--env-file=${localWorkspaceFolder}/.env"
+        "--env-file=${localWorkspaceFolder}/.env",
+        "--gpus", "all"
     ],
     "customizations": {
         "vscode": {

@@ -46,4 +46,5 @@
 - Save checkpoint of code completion to BB
   - Create a benchmark notebook that starts with the HF model
   - Poetry is creating .venv so we should use that not my_env
+- In docker give apt rights to vscode user (avoid sudo)
 

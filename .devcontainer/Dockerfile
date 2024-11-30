@@ -5,7 +5,6 @@ FROM nvidia/cuda:12.6.2-base-ubuntu22.04
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV PDM_USE_PEP582=1
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -55,6 +54,8 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 COPY --chown=$USERNAME:$USERNAME README.md pyproject.toml src .cache /workspace/
 COPY --chown=$USERNAME:$USERNAME .cache /cache
+
+ENV UV_LINK_MODE=copy
 
 # We can copy /cache to /workspace/.cache to speed future builds
 RUN uv sync --cache-dir /cache
