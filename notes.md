@@ -1,33 +1,20 @@
+- Get all the data aligned in DVC
 - Although this is not strictly necessary, we find it useful to define the model parameters in one config file (e.g configs/125M.yml) and the data path parameters in another (e.g configs/local_setup.yml).
 - While so far there has been no systematic work that focuses on prompted pretraining, recent work (Biderman and Raff, 2022) observed that the formulation of the StackExchange component of the Pile appears to heavily influences code generation
 - The deepy.py script assumes it is running in the root of GTP-NeoX repo
 - Maybe we should install gpt-neox as a submodule ?
-- Colab renewal 24th
-- Branch for work on venv setup
-  - https://colab.research.google.com/github/markNZed/GPT-NeoX-Colab/blob/venv/notebooks/shakespeare_trainingV2.ipynb
+- Colab renewal 24th of the month
 - Different levels of complexity in the notebook:
   - shakespeare_training.ipynb
-  - shakespeare_training+tb.ipynb # Add tensorboard
+  - shakespeare_training+tensorboard.ipynb # Add tensorboard
   - shakespeare_upload_data.ipynb # Create data and upload to backblaze
-  - shakespeare_training+tb+backblaze.ipynb # use data from backblaze (only processed)
+  - shakespeare_training+tensorboard+backblaze.ipynb # use data from backblaze (only processed)
   - shakespeare_venv_data.ipynb # Create venv and upload to backblaze
-  - shakespeare_training+tb+backblaze+venv.ipynb # add option upload of model to backblaze
+  - shakespeare_training+tensorboard+backblaze+venv.ipynb # add option upload of model to backblaze
   - shakespeare_inference.ipynb # download model form backblaze and use it
-  - shakespeare_training+tb+backblaze+venv+mlflow.ipynb # add hydra and MLFlow
+  - shakespeare_training+tensorboard+backblaze+venv+mlflow.ipynb # add hydra and MLFlow
   - shakespeare_experiment.ipynb # Run experiments using dagshub and present results
-- https://github.com/pytorch/torchtitan might be a good alternative to GPTNeoX  
-- Adding to git annex:
-  - git annex enableremote backblaze
-  - git annex sync backblaze
-  - git annex add data/shakespeare*
-  - git commit -m "Added Shakespeare files to annex"
-  - git push
-  - git annex copy data/shakespeare* --to backblaze
-  - #Notice here we sync all the endpoints
-  - git annex sync 
-- How to allow for easy git annex upload from colab?
-  - Let the user set a number of secrets and/or use the .env
-  - Not bad that it works without backblaze
+- https://github.com/pytorch/torchtitan might be a good alternative to GPTNeoX
 - DVC
   - dvc init
   - dvc remote add -d backblaze s3://GPT-NeoX-Colab/dvc
@@ -40,10 +27,6 @@
   - export AWS_ACCESS_KEY_ID=...
   - export AWS_SECRET_ACCESS_KEY=...
   - dvc push
-- Setup a real shakespeare experiment
-  - save the loss
-  - perplexity as metric ?
-- Save checkpoint of code completion to BB
-  - Create a benchmark notebook that starts with the HF model
-  - Poetry is creating .venv so we should use that not my_env
+
+
 
