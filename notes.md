@@ -27,6 +27,13 @@
   - export AWS_ACCESS_KEY_ID=...
   - export AWS_SECRET_ACCESS_KEY=...
   - dvc push
+- Setup a real shakespeare experiment
+  - save the loss
+  - perplexity as metric ?
+- Save checkpoint of code completion to BB
+  - Create a benchmark notebook that starts with the HF model
+  - Poetry is creating .venv so we should use that not my_env
+- In docker give apt rights to vscode user (avoid sudo)
 
 
 
