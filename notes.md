@@ -27,6 +27,8 @@
   - export AWS_ACCESS_KEY_ID=...
   - export AWS_SECRET_ACCESS_KEY=...
   - dvc push
+  - Garbage collection in working dir and remote
+    - dvc gc -c -w
 - Setup a real shakespeare experiment
   - save the loss
   - perplexity as metric ?
