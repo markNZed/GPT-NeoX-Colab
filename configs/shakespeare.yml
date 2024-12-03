@@ -81,7 +81,7 @@
 
   "log_interval": 100,
   "steps_per_print": 100,
-  "wall_clock_breakdown": true,
+  "wall_clock_breakdown": false,
 
   # Required for model conversion into HF format
   "tokenizer_type": "CharLevelTokenizer",
